@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <script src="/angular.min.js"></script>
+    <script src="/jquery.js"></script>
+    <script src="/AesUtil.js"></script>
+    <script src="/aes.js"></script>
+    <script src="/pbkdf2.js"></script>
+
+    <script src="/bootstrap.js"></script>
+    <script src="/loginCtrl.js"></script>
+</head>
+<body ng-app="demoApp" ng-controller="loginController">
+
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-9">
+            <div ng-hide="true">
+                <p id = "key" th:text="${session.key}"></p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="login-form" role="form" style="display: block;">
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input type="text" name="userName" id="username" tabindex="1" class="form-control" placeholder="Username" ng-model="userName" autocomplete="off"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" ng-model="password" autocomplete="off"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <input type="button" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In" ng-click="logMeIn()"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
